@@ -8,13 +8,13 @@ function drawUpgrades(){
     <button class="btn btn-success" onclick="app.upgradesController.purchaseUpgrade('${u.name}')">${u.name} - ${u.price}</button>
     `
   })
-    document.getElementById('upgrades').innerHTML = template
+  document.getElementById('upgrades').innerHTML = template
 }
 
 
 export default class UpgradesController{
   constructor(){
-    ProxyState.on('')
+    ProxyState.on('purchasedUpgrades', drawUpgrades)
     drawUpgrades()
   }
 

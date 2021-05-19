@@ -20,17 +20,15 @@ function drawMultiplier(){
 
 export default class MoonController{
 
-
-  // Show them that when you are registering new controllers, build the contstructor with a simple console.log to make sure that it is linked up before doing anything else
   constructor(){
     ProxyState.on("cheese", drawCount)
-    ProxyState.on("cheese", drawMultiplier)
+    ProxyState.on("purchasedUpgrades", drawMultiplier)
     drawMultiplier()
     drawCount()
   }
 
   mine(){
     moonService.mine()
-    console.log(ProxyState.upgrades)
+    console.log(ProxyState.purchasedUpgrades)
   }
 }

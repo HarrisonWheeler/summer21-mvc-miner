@@ -12,11 +12,13 @@ class UpgradesService{
     let foundUpgrade = ProxyState.upgrades.find(u => u.name == upgradeName)
     if(ProxyState.cheese >= foundUpgrade.price){
       ProxyState.cheese -= foundUpgrade.price
+      foundUpgrade.price += foundUpgrade.price 
       foundUpgrade.quantity++
-      NotificationService.confirmNotification("Purchased", "success")
+      ProxyState.purchasedUpgrades.push(foundUpgrade)
       // this completely resets proxystate so that our listener will notice a change and run our draw
-      ProxyState.purchasedUpgrades = ProxyState.purchasedUpgrades.push(foundUpgrade) 
-    } else{
+      ProxyState.purchasedUpgrades = ProxyState.purchasedUpgrades
+      NotificationService.confirmNotification("Purchased!", "success")
+    } else {
       NotificationService.confirmNotification("You aint got the cheddahhhh", "error")
     }
   }
