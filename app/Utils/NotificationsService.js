@@ -1,6 +1,3 @@
-
-
-
 export default class NotificationService {
   static confirmNotification(title = 'Your work has been saved', icon = "success") {
     Swal.fire({

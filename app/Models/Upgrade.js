@@ -1,5 +1,3 @@
-
-
 export default class Upgrade{
   constructor(name, price, quantity, multiplier){
     this.name = name,

@@ -15,7 +15,7 @@ class UpgradesService{
       foundUpgrade.price += foundUpgrade.price 
       foundUpgrade.quantity++
       ProxyState.purchasedUpgrades.push(foundUpgrade)
-      // this completely resets proxystate so that our listener will notice a change and run our draw
+      // this completely resets proxystate.purchasedUpgrades so that our listener will notice a change and run our draw
       ProxyState.purchasedUpgrades = ProxyState.purchasedUpgrades
       NotificationService.confirmNotification("Purchased!", "success")
     } else {
